@@ -17,13 +17,20 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
     compileOnly 'org.projectlombok:lombok'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
 
     // H2 데이터 베이스
     implementation 'com.h2database:h2:1.4.197'
+
+    // 세션을 DB에 저장하게 해주는 기능
+    implementation 'org.springframework.session:spring-session-jdbc'
 
     // thymeleaf
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'

@@ -1,13 +1,23 @@
 spring:
     datasource:
-        url: jdbc:h2:mem:testdb
+        url: jdbc:h2:tcp://localhost/~/test
         username: sa
         password:
         driver-class-name: org.h2.Driver
 
     jpa:
+        hibernate:
+            ddl-auto: create
         show-sql: true
     h2:
         console:
             enabled: true
+    profiles:
+        include: oauth  # application-oauth.yml에서 oauth 부분을 가지고 와서 만들어짐
+
+    session:
+        store-type:
+            jdbc
+        jdbc:
+            initialize-schema: always
 
